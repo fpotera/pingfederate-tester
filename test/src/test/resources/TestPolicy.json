@@ -1,0 +1,50 @@
+{
+  "rootNode": {
+    "action": {
+      "type": "AUTHN_SOURCE",
+      "authenticationSource": {
+        "type": "IDP_ADAPTER",
+        "sourceRef": {
+          "id": "TestIdPAdapter",
+          "location": "https://localhost:9999/pf-admin-api/v1/idp/adapters/TestIdPAdapter"
+        }
+      }
+    },
+    "children": [
+      {
+        "action": {
+          "type": "DONE",
+          "context": "Fail"
+        }
+      },
+      {
+        "action": {
+          "type": "APC_MAPPING",
+          "context": "Success",
+          "authenticationPolicyContractRef": {
+            "id": "%contr%",
+            "location": "https://localhost:9999/pf-admin-api/v1/authenticationPolicyContracts/yLXyyHb3Igk2pf9x"
+          },
+          "attributeMapping": {
+            "attributeSources": [],
+            "attributeContractFulfillment": {
+              "subject": {
+                "source": {
+                  "type": "ADAPTER",
+                  "id": "TestIdPAdapter"
+                },
+                "value": "username"
+              }
+            },
+            "issuanceCriteria": {
+              "conditionalCriteria": []
+            }
+          }
+        }
+      }
+    ]
+  },
+  "name": "TestPolicy",
+  "enabled": true,
+  "handleFailuresLocally": false
+}

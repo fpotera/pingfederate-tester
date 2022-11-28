@@ -1,0 +1,26 @@
+{
+  "attributeSources": [],
+  "attributeContractFulfillment": {
+    "sub": {
+      "source": {
+        "type": "AUTHENTICATION_POLICY_CONTRACT"
+      },
+      "value": "mail"
+    }
+  },
+  "issuanceCriteria": {
+    "conditionalCriteria": []
+  },
+  "id": "authz_req|apc.Zxp6N6W5PH9onACT|TestTokenManger",
+  "context": {
+    "type": "AUTHENTICATION_POLICY_CONTRACT",
+    "contextRef": {
+      "id": "Zxp6N6W5PH9onACT",
+      "location": "https://localhost:9999/pf-admin-api/v1/authenticationPolicyContracts/Zxp6N6W5PH9onACT"
+    }
+  },
+  "accessTokenManagerRef": {
+    "id": "TestTokenManger",
+    "location": "https://localhost:9999/pf-admin-api/v1/oauth/accessTokenManagers/TestTokenManger"
+  }
+}

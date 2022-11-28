@@ -1,0 +1,75 @@
+version: "3.9"
+
+#-------------------------------------------------------------------------------------
+#- Ping Identity PingFederate getting started demo
+#-
+#-                +---------------+
+#-                | PingFederate  |
+#-                +---------------+
+#-
+#- To access PingFederate Console
+#-
+#-    https://localhost:9999/pingfederate/app
+#-
+#-    Username: administrator
+#-    Password: 2FederateM0re
+#-------------------------------------------------------------------------------------
+
+#-------------------------------------------------------------------------------------
+#- Mockserver access
+#-
+#-    https://localhost:1080/mockserver/dashboard
+#-
+#-------------------------------------------------------------------------------------
+
+services:
+  pingfederate:
+    image: ${PING_IDENTITY_DEVOPS_REGISTRY:-docker.io/pingidentity}/pingfederate:${PING_IDENTITY_DEVOPS_TAG:-edge}
+    # You may need to comment this tmpfs line if you run containers on windows
+    tmpfs: /run/secrets
+    environment:
+      - SERVER_PROFILE_URL=https://github.com/pingidentity/pingidentity-server-profiles.git
+      - SERVER_PROFILE_PATH=getting-started/pingfederate
+      - PF_LDAP_USERNAME="Administrator"
+      - PF_LDAP_PASSWORD="2FederateM0re"
+    env_file:
+      - ${HOME}/.pingidentity/config
+    ports:
+      - "9031:9031"
+      - "9999:9999"
+    networks:
+      - pingnet
+#    volumes:
+#      - pingfederate-out:/opt/out
+
+  mockserver:
+    image: docker.io/mockserver/mockserver
+    ports:
+      - "1080:1080"
+    networks:
+      - pingnet
+
+  java-test:
+    image: java-test
+    build:
+      context: ./
+      target: java-test
+    networks:
+      - pingnet
+    volumes:
+      - type: bind
+        source: /var/run/docker.sock
+        target: /var/run/docker.sock
+#      - java-test-out:/app
+    depends_on:
+      pingfederate:
+        condition: service_healthy
+      mockserver:
+        condition: service_started
+
+networks:
+  pingnet:
+
+#volumes:
+#  java-test-out:
+#  pingfederate-out:

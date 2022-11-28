@@ -1,0 +1,180 @@
+{
+  "id": "TestAdapter",
+  "name": "TestAdapter",
+  "pluginDescriptorRef": {
+    "id": "org.bluzysoft.pingfederate.adapters.LoginLogoutJournalingAdapter",
+    "location": "https://localhost:9999/pf-admin-api/v1/idp/adapters/descriptors/org.bluzysoft.pingfederate.adapters.LoginLogoutJournalingAdapter"
+  },
+  "configuration": {
+    "tables": [
+      {
+        "name": "Journal Attributes - Contract Values",
+        "rows": [
+          {
+            "fields": [
+              {
+                "name": "Journal Attribute Name",
+                "value": "sub"
+              },
+              {
+                "name": "Contract Attribute Name",
+                "value": "sub"
+              },
+              {
+                "name": "Static Attribute Value",
+                "value": "false"
+              },
+              {
+                "name": "Use In Logout",
+                "value": "false"
+              }
+            ],
+            "defaultRow": false
+          }
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "name": "Timestamp Attr.Name Login",
+        "value": ""
+      },
+      {
+        "name": "Timestamp Attr.Name Logout",
+        "value": ""
+      },
+      {
+        "name": "Lougout Reason Param Name",
+        "value": ""
+      },
+      {
+        "name": "URL to Journal Service for Login",
+        "value": "http://$server.ip$/login"
+      },
+      {
+        "name": "URL to Journal Service for Logout",
+        "value": "http://$server.ip$/logout"
+      },
+      {
+        "name": "HTTP Type",
+        "value": "POST"
+      },
+      {
+        "name": "Send JSON",
+        "value": "true"
+      },
+      {
+        "name": "A2H Names",
+        "value": ""
+      },
+      {
+        "name": "Retun Value Attribute",
+        "value": ""
+      },
+      {
+        "name": "Return Value Attribute Type",
+        "value": "BOOL"
+      },
+      {
+        "name": "Value for \"success\"",
+        "value": ""
+      },
+      {
+        "name": "Allways Succeed",
+        "value": "false"
+      },
+      {
+        "name": "Log Data",
+        "value": "false"
+      },
+      {
+        "name": "Use OAUTH",
+        "value": "false"
+      },
+      {
+        "name": "IDP End Point",
+        "value": "https://server/idp/"
+      },
+      {
+        "name": "Scope",
+        "value": ""
+      },
+      {
+        "name": "Client ID",
+        "value": ""
+      },
+      {
+        "name": "Password",
+        "value": ""
+      },
+      {
+        "name": "Retry count",
+        "value": "3"
+      },
+      {
+        "name": "Retry period",
+        "value": "1000"
+      }
+    ]
+  },
+  "attributeContract": {
+    "coreAttributes": [
+      {
+        "name": "journal_info",
+        "masked": false,
+        "pseudonym": false
+      },
+      {
+        "name": "journal_success",
+        "masked": false,
+        "pseudonym": false
+      },
+      {
+        "name": "journal_a2r_headers",
+        "masked": false,
+        "pseudonym": false
+      }
+    ],
+    "extendedAttributes": [
+      {
+        "name": "sub",
+        "masked": false,
+        "pseudonym": true
+      }
+    ],
+    "uniqueUserKeyAttribute": "sub",
+    "maskOgnlValues": false
+  },
+  "attributeMapping": {
+    "attributeSources": [],
+    "attributeContractFulfillment": {
+      "journal_info": {
+        "source": {
+          "type": "ADAPTER"
+        },
+        "value": "journal_info"
+      },
+      "sub": {
+        "source": {
+          "type": "ADAPTER"
+        },
+        "value": "sub"
+      },
+      "journal_success": {
+        "source": {
+          "type": "ADAPTER"
+        },
+        "value": "journal_success"
+      },
+      "journal_a2r_headers": {
+        "source": {
+          "type": "ADAPTER"
+        },
+        "value": "journal_a2r_headers"
+      }
+    },
+    "issuanceCriteria": {
+      "conditionalCriteria": []
+    }
+  }
+}
