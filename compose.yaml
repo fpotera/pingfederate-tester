@@ -54,6 +54,8 @@ services:
     build:
       context: ./
       target: java-test
+      args:
+        token: ${CODEARTIFACT_AUTH_TOKEN}
     networks:
       - pingnet
     volumes:
