@@ -1,0 +1,309 @@
+{
+  "id": "TestIdPAdapter",
+  "name": "TestIdPAdapter",
+  "pluginDescriptorRef": {
+    "id": "com.pingidentity.adapters.htmlform.idp.HtmlFormIdpAuthnAdapter",
+    "location": "https://localhost:9999/pf-admin-api/v1/idp/adapters/descriptors/com.pingidentity.adapters.htmlform.idp.HtmlFormIdpAuthnAdapter"
+  },
+  "configuration": {
+    "tables": [
+      {
+        "name": "Credential Validators",
+        "rows": [
+          {
+            "fields": [
+              {
+                "name": "Password Credential Validator Instance",
+                "value": "TestCV"
+              }
+            ],
+            "defaultRow": false
+          }
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "name": "Challenge Retries",
+        "value": "3"
+      },
+      {
+        "name": "Session State",
+        "value": "None"
+      },
+      {
+        "name": "Session Timeout",
+        "value": "60"
+      },
+      {
+        "name": "Session Max Timeout",
+        "value": "480"
+      },
+      {
+        "name": "Allow Password Changes",
+        "value": "false"
+      },
+      {
+        "name": "Password Management System",
+        "value": ""
+      },
+      {
+        "name": "Enable 'Remember My Username'",
+        "value": "false"
+      },
+      {
+        "name": "Enable 'This is My Device'",
+        "value": "false"
+      },
+      {
+        "name": "Change Password Policy Contract",
+        "value": ""
+      },
+      {
+        "name": "Change Password Email Notification",
+        "value": "false"
+      },
+      {
+        "name": "Show Password Expiring Warning",
+        "value": "false"
+      },
+      {
+        "name": "Password Reset Type",
+        "value": "NONE"
+      },
+      {
+        "name": "Password Reset Policy Contract",
+        "value": ""
+      },
+      {
+        "name": "Revoke Sessions After Password Change Or Reset",
+        "value": "false"
+      },
+      {
+        "name": "Account Unlock",
+        "value": "false"
+      },
+      {
+        "name": "Local Identity Profile",
+        "value": ""
+      },
+      {
+        "name": "Notification Publisher",
+        "value": ""
+      },
+      {
+        "name": "Enable Username Recovery",
+        "value": "false"
+      },
+      {
+        "name": "Login Template",
+        "value": "html.form.login.template.html"
+      },
+      {
+        "name": "Logout Path",
+        "value": ""
+      },
+      {
+        "name": "Logout Redirect",
+        "value": ""
+      },
+      {
+        "name": "Logout Template",
+        "value": "idp.logout.success.page.template.html"
+      },
+      {
+        "name": "Change Password Template",
+        "value": "html.form.change.password.template.html"
+      },
+      {
+        "name": "Change Password Message Template",
+        "value": "html.form.message.template.html"
+      },
+      {
+        "name": "Password Management System Message Template",
+        "value": "html.form.message.template.html"
+      },
+      {
+        "name": "Password Update Timeout",
+        "value": "30"
+      },
+      {
+        "name": "Change Password Email Template",
+        "value": "message-template-end-user-password-change.html"
+      },
+      {
+        "name": "Expiring Password Warning Template",
+        "value": "html.form.password.expiring.notification.template.html"
+      },
+      {
+        "name": "Threshold for Expiring Password Warning",
+        "value": "7"
+      },
+      {
+        "name": "Snooze Interval for Expiring Password Warning",
+        "value": "24"
+      },
+      {
+        "name": "Require Re-Authentication For Expiring Password Flow",
+        "value": "false"
+      },
+      {
+        "name": "Login Challenge Template",
+        "value": "html.form.login.challenge.template.html"
+      },
+      {
+        "name": "'Remember My Username' Lifetime",
+        "value": "30"
+      },
+      {
+        "name": "'This is My Device' Lifetime",
+        "value": "30"
+      },
+      {
+        "name": "Allow Username Edits During Chaining",
+        "value": "false"
+      },
+      {
+        "name": "Track Authentication Time",
+        "value": "true"
+      },
+      {
+        "name": "Post-Password Change Re-Authentication Delay",
+        "value": "0"
+      },
+      {
+        "name": "Password Reset One-Time Link Email Template",
+        "value": "message-template-forgot-password-link.html"
+      },
+      {
+        "name": "Password Reset One-Time Password Email Template",
+        "value": "message-template-forgot-password-code.html"
+      },
+      {
+        "name": "Password Reset Complete Email Template",
+        "value": "message-template-forgot-password-complete.html"
+      },
+      {
+        "name": "Password Reset Failed Email Template",
+        "value": "message-template-forgot-password-failed.html"
+      },
+      {
+        "name": "Password Reset Username Template",
+        "value": "forgot-password.html"
+      },
+      {
+        "name": "Password Reset Code Template",
+        "value": "forgot-password-resume.html"
+      },
+      {
+        "name": "Password Reset Template",
+        "value": "forgot-password-change.html"
+      },
+      {
+        "name": "Password Reset Error Template",
+        "value": "forgot-password-error.html"
+      },
+      {
+        "name": "Password Reset Success Template",
+        "value": "forgot-password-success.html"
+      },
+      {
+        "name": "Account Unlock Template",
+        "value": "account-unlock.html"
+      },
+      {
+        "name": "Account Unlock Email Template",
+        "value": "message-template-account-unlock-complete.html"
+      },
+      {
+        "name": "OTP Length",
+        "value": "8"
+      },
+      {
+        "name": "Allowed OTP Character Set",
+        "value": "23456789BCDFGHJKMNPQRSTVWXZbcdfghjkmnpqrstvwxz"
+      },
+      {
+        "name": "OTP Time to Live",
+        "value": "10"
+      },
+      {
+        "name": "PingID Properties",
+        "value": ""
+      },
+      {
+        "name": "Require Verified Email",
+        "value": "false"
+      },
+      {
+        "name": "Username Recovery Template",
+        "value": "username.recovery.template.html"
+      },
+      {
+        "name": "Username Recovery Info Template",
+        "value": "username.recovery.info.template.html"
+      },
+      {
+        "name": "Username Recovery Email Template",
+        "value": "message-template-username-recovery.html"
+      },
+      {
+        "name": "CAPTCHA for Authentication",
+        "value": "false"
+      },
+      {
+        "name": "CAPTCHA for Password change",
+        "value": "false"
+      },
+      {
+        "name": "CAPTCHA for Password Reset",
+        "value": "false"
+      },
+      {
+        "name": "CAPTCHA for Username recovery",
+        "value": "false"
+      },
+      {
+        "name": "Fail Authentication on Account Lockout",
+        "value": "false"
+      }
+    ]
+  },
+  "attributeContract": {
+    "coreAttributes": [
+      {
+        "name": "policy.action",
+        "masked": false,
+        "pseudonym": false
+      },
+      {
+        "name": "username",
+        "masked": false,
+        "pseudonym": true
+      }
+    ],
+    "extendedAttributes": [],
+    "uniqueUserKeyAttribute": "username",
+    "maskOgnlValues": false
+  },
+  "attributeMapping": {
+    "attributeSources": [],
+    "attributeContractFulfillment": {
+      "policy.action": {
+        "source": {
+          "type": "ADAPTER"
+        },
+        "value": "policy.action"
+      },
+      "username": {
+        "source": {
+          "type": "ADAPTER"
+        },
+        "value": "username"
+      }
+    },
+    "issuanceCriteria": {
+      "conditionalCriteria": []
+    }
+  }
+}

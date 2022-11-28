@@ -1,0 +1,50 @@
+{
+  "clientId": "TestClient",
+  "enabled": true,
+  "redirectUris": [
+    "http://172.17.0.2:1080"
+  ],
+  "grantTypes": [
+    "IMPLICIT"
+  ],
+  "name": "TestClient",
+  "refreshRolling": "SERVER_DEFAULT",
+  "refreshTokenRollingIntervalType": "SERVER_DEFAULT",
+  "persistentGrantExpirationType": "SERVER_DEFAULT",
+  "persistentGrantExpirationTime": 0,
+  "persistentGrantExpirationTimeUnit": "DAYS",
+  "persistentGrantIdleTimeoutType": "SERVER_DEFAULT",
+  "persistentGrantIdleTimeout": 0,
+  "persistentGrantIdleTimeoutTimeUnit": "DAYS",
+  "persistentGrantReuseType": "SERVER_DEFAULT",
+  "allowAuthenticationApiInit": false,
+  "bypassApprovalPage": false,
+  "restrictScopes": false,
+  "requirePushedAuthorizationRequests": false,
+  "restrictedScopes": [],
+  "exclusiveScopes": [],
+  "restrictedResponseTypes": [],
+  "defaultAccessTokenManagerRef": {
+    "id": "TestTokenManger",
+    "location": "https://localhost:9999/pf-admin-api/v1/oauth/accessTokenManagers/TestTokenManger"
+  },
+  "restrictToDefaultAccessTokenManager": false,
+  "validateUsingAllEligibleAtms": false,
+  "oidcPolicy": {
+    "policyGroup": {
+      "id": "TestOIDCPolicy",
+      "location": "https://localhost:9999/pf-admin-api/v1/oauth/openIdConnect/policies/TestOIDCPolicy"
+    },
+    "grantAccessSessionRevocationApi": false,
+    "grantAccessSessionSessionManagementApi": false,
+    "pingAccessLogoutCapable": false,
+    "pairwiseIdentifierUserType": false
+  },
+  "clientAuth": {
+    "type": "NONE"
+  },
+  "deviceFlowSettingType": "SERVER_DEFAULT",
+  "requireProofKeyForCodeExchange": false,
+  "refreshTokenRollingGracePeriodType": "SERVER_DEFAULT",
+  "requireSignedRequests": false
+}

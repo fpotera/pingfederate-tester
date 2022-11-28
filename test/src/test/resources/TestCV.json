@@ -1,0 +1,46 @@
+{
+  "id": "TestCV",
+  "name": "TestCV",
+  "pluginDescriptorRef": {
+    "id": "org.sourceid.saml20.domain.SimpleUsernamePasswordCredentialValidator",
+    "location": "https://localhost:9999/pf-admin-api/v1/passwordCredentialValidators/descriptors/org.sourceid.saml20.domain.SimpleUsernamePasswordCredentialValidator"
+  },
+  "configuration": {
+    "tables": [
+      {
+        "name": "Users",
+        "rows": [
+          {
+            "fields": [
+              {
+                "name": "Username",
+                "value": "florin"
+              },
+              {
+                "name": "Password",
+                "value": "florin"
+              },
+              {
+                "name": "Confirm Password",
+                "value": "florin"
+              },
+              {
+                "name": "Relax Password Requirements",
+                "value": "true"
+              }
+            ],
+            "defaultRow": false
+          }
+        ]
+      }
+    ],
+    "fields": []
+  },
+  "attributeContract": {
+    "coreAttributes": [
+      {
+        "name": "username"
+      }
+    ]
+  }
+}

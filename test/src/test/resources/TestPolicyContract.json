@@ -1,0 +1,9 @@
+{
+  "name": "TestPolicyContract",
+  "coreAttributes": [
+    {
+      "name": "subject"
+    }
+  ],
+  "extendedAttributes": []
+}

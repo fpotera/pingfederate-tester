@@ -1,0 +1,10 @@
+{
+  "id": "5j2BT8nDIpsXWxMz",
+  "name": "TestContract",
+  "coreAttributes": [
+    {
+      "name": "subject"
+    }
+  ],
+  "extendedAttributes": []
+}

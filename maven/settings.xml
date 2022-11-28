@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0 http://maven.apache.org/xsd/settings-1.2.0.xsd" xmlns="http://maven.apache.org/SETTINGS/1.2.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <servers>
+        <server>
+            <id>bluzy-io-BluzyRepo</id>
+            <username>aws</username>
+            <password>${env.CODEARTIFACT_AUTH_TOKEN}</password>
+        </server>
+    </servers>
+
+    <profiles>
+        <profile>
+            <id>bluzy-io-BluzyRepo</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <repositories>
+                <repository>
+                    <id>bluzy-io-BluzyRepo</id>
+                    <url>https://bluzy-io-675011844284.d.codeartifact.eu-central-1.amazonaws.com/maven/BluzyRepo/</url>
+                </repository>
+            </repositories>
+        </profile>
+    </profiles>
+</settings>
