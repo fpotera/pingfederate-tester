@@ -19,4 +19,8 @@ public interface URLs {
 
     String PING_FED_POLICY_URL = format("https://{0}:9999/pf-admin-api/v1/authenticationPolicies/policy", PING_FEDERATE_HOST);
 
+    String PING_FED_POLICY_CONTRACT_MAPPING_URL = format("https://{0}:9999/pf-admin-api/v1/oauth/authenticationPolicyContractMappings", PING_FEDERATE_HOST);
+
+    String PING_FED_ACCESS_TOKEN_MAPPING_URL = format("https://{0}:9999/pf-admin-api/v1/oauth/accessTokenMappings", PING_FEDERATE_HOST);
+
 }

@@ -45,10 +45,9 @@ class CustomCodeIT {
 		String jsonString = apiConfigurator.applyConfigChange(PING_FED_POLICY_CONTRACT_URL, "/TestPolicyContract.json", null);
 		JSONObject obj = new JSONObject(jsonString);
 		String polConId = obj.getString("id");
-		jsonString = apiConfigurator.applyConfigChange(PING_FED_POLICY_URL, "/TestPolicy.json", of("%contr%", polConId));
-		obj = new JSONObject(jsonString);
-		String polId = obj.getString("id");
-		out.println("#### polid: "+polId);
+		apiConfigurator.applyConfigChange(PING_FED_POLICY_URL, "/TestPolicy.json", of("%contr%", polConId));
+		apiConfigurator.applyConfigChange(PING_FED_POLICY_CONTRACT_MAPPING_URL, "/TestPolicyContractMappings.json", of("%contr%", polConId));
+		apiConfigurator.applyConfigChange(PING_FED_ACCESS_TOKEN_MAPPING_URL, "/TestAccessTokenMapping.json", of("%contr%", polConId));
 	}
 
 	@AfterAll
