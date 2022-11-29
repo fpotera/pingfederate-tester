@@ -1,0 +1,24 @@
+{
+  "attributeSources": [],
+  "attributeContractFulfillment": {
+    "USER_NAME": {
+      "source": {
+        "type": "AUTHENTICATION_POLICY_CONTRACT"
+      },
+      "value": "subject"
+    },
+    "USER_KEY": {
+      "source": {
+        "type": "AUTHENTICATION_POLICY_CONTRACT"
+      },
+      "value": "subject"
+    }
+  },
+  "issuanceCriteria": {
+    "conditionalCriteria": []
+  },
+  "authenticationPolicyContractRef": {
+    "id": "%contr%",
+    "location": "https://localhost:9999/pf-admin-api/v1/authenticationPolicyContracts/zObdSmzneK4aqtMl"
+  }
+}
