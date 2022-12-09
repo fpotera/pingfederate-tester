@@ -1,0 +1,25 @@
+{
+  "attributeSources": [],
+  "attributeContractFulfillment": {
+    "USER_NAME": {
+      "source": {
+        "type": "ADAPTER"
+      },
+      "value": "username"
+    },
+    "USER_KEY": {
+      "source": {
+        "type": "ADAPTER"
+      },
+      "value": "username"
+    }
+  },
+  "issuanceCriteria": {
+    "conditionalCriteria": []
+  },
+  "id": "TestBasicIdPAdapter",
+  "idpAdapterRef": {
+    "id": "TestBasicIdPAdapter",
+    "location": "https://localhost:9999/pf-admin-api/v1/idp/adapters/TestIdPAdapter"
+  }
+}
