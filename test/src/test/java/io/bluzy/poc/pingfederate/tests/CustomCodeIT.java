@@ -4,14 +4,12 @@ import static io.bluzy.clients.docker.base.DockerConfig.UNIX_SOCKET_URL;
 import static io.bluzy.poc.pingfederate.tests.config.URLs.*;
 import static java.lang.System.*;
 import static java.nio.file.Paths.get;
-import static java.util.Map.of;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
-import org.json.JSONObject;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -22,7 +20,10 @@ class CustomCodeIT {
 	private static MockServerContainer mockServerContainer = new MockServerContainer(UNIX_SOCKET_URL, false, null);
 
 	@Test
-	void test() {
+	void test() throws Exception {
+		OAuthClient oAuthClient = new OAuthClient();
+		oAuthClient.callImplicitFlow();
+
 		assertTrue(true);
 	}
 
@@ -33,7 +34,7 @@ class CustomCodeIT {
 				get(getProperty("oltu.path")).toAbsolutePath().toFile(),
 				get(getProperty("custom.code.jar.path")).toAbsolutePath().toFile()
 		};
-		pingFederateContainer.pushFiles(files, "/opt/out/instance/server/default/deploy");
+//		pingFederateContainer.pushFiles(files, "/opt/out/instance/server/default/deploy");
 
 		APIConfigurator apiConfigurator = new APIConfigurator();
 
@@ -41,13 +42,9 @@ class CustomCodeIT {
 		apiConfigurator.applyConfigChange(PING_FED_OIDC_POLICY_URL, "/TestOIDCPolicy.json", null);
 		apiConfigurator.applyConfigChange(PING_FED_CLIENT_URL, "/TestClient.json", null);
 		apiConfigurator.applyConfigChange(PING_FED_CV_URL, "/TestCV.json", null);
-		apiConfigurator.applyConfigChange(PING_FED_IDP_ADAPTER_URL, "/TestIdPAdapter.json", null);
-		String jsonString = apiConfigurator.applyConfigChange(PING_FED_POLICY_CONTRACT_URL, "/TestPolicyContract.json", null);
-		JSONObject obj = new JSONObject(jsonString);
-		String polConId = obj.getString("id");
-		apiConfigurator.applyConfigChange(PING_FED_POLICY_URL, "/TestPolicy.json", of("%contr%", polConId));
-		apiConfigurator.applyConfigChange(PING_FED_POLICY_CONTRACT_MAPPING_URL, "/TestPolicyContractMappings.json", of("%contr%", polConId));
-		apiConfigurator.applyConfigChange(PING_FED_ACCESS_TOKEN_MAPPING_URL, "/TestAccessTokenMapping.json", of("%contr%", polConId));
+		apiConfigurator.applyConfigChange(PING_FED_IDP_ADAPTER_URL, "/TestBasicIdPAdapter.json", null);
+		apiConfigurator.applyConfigChange(PING_FED_IDP_ADAPTER_GRANT_MAPPING_URL, "/TestIdPAdapterGrantMapping.json", null);
+		apiConfigurator.applyConfigChange(PING_FED_ACCESS_TOKEN_MAPPING_URL, "/TestIdPAdapterTokenManagerMapping.json", null);
 	}
 
 	@AfterAll

@@ -70,6 +70,12 @@
 			<version>20220924</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.nimbusds</groupId>
+			<artifactId>oauth2-oidc-sdk</artifactId>
+			<version>10.3</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>

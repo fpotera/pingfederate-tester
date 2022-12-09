@@ -1,0 +1,25 @@
+{
+  "attributeSources": [],
+  "attributeContractFulfillment": {
+    "sub": {
+      "source": {
+        "type": "ADAPTER"
+      },
+      "value": "username"
+    }
+  },
+  "issuanceCriteria": {
+    "conditionalCriteria": []
+  },
+  "context": {
+    "type": "IDP_ADAPTER",
+    "contextRef": {
+      "id": "TestBasicIdPAdapter",
+      "location": "https://localhost:9999/pf-admin-api/v1/idp/adapters/TestIdPAdapter"
+    }
+  },
+  "accessTokenManagerRef": {
+    "id": "TestTokenManger",
+    "location": "https://localhost:9999/pf-admin-api/v1/oauth/accessTokenManagers/TestTokenManger"
+  }
+}

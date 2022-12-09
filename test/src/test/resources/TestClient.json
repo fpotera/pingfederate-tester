@@ -2,7 +2,7 @@
   "clientId": "TestClient",
   "enabled": true,
   "redirectUris": [
-    "http://172.17.0.2:1080"
+    "http://mockserver:1080/callback"
   ],
   "grantTypes": [
     "IMPLICIT"
@@ -18,7 +18,7 @@
   "persistentGrantIdleTimeoutTimeUnit": "DAYS",
   "persistentGrantReuseType": "SERVER_DEFAULT",
   "allowAuthenticationApiInit": false,
-  "bypassApprovalPage": false,
+  "bypassApprovalPage": true,
   "restrictScopes": false,
   "requirePushedAuthorizationRequests": false,
   "restrictedScopes": [],

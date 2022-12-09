@@ -1,0 +1,61 @@
+{
+  "id": "TestBasicIdPAdapter",
+  "name": "TestBasicIdPAdapter",
+  "pluginDescriptorRef": {
+    "id": "com.pingidentity.adapters.httpbasic.idp.HttpBasicIdpAuthnAdapter",
+    "location": "https://localhost:9999/pf-admin-api/v1/idp/adapters/descriptors/com.pingidentity.adapters.httpbasic.idp.HttpBasicIdpAuthnAdapter"
+  },
+  "configuration": {
+    "tables": [
+      {
+        "name": "Credential Validators",
+        "rows": [
+          {
+            "fields": [
+              {
+                "name": "Password Credential Validator Instance",
+                "value": "TestCV"
+              }
+            ],
+            "defaultRow": false
+          }
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "name": "Realm",
+        "value": "secured"
+      },
+      {
+        "name": "Challenge Retries",
+        "value": "3"
+      }
+    ]
+  },
+  "attributeContract": {
+    "coreAttributes": [
+      {
+        "name": "username",
+        "masked": false,
+        "pseudonym": true
+      }
+    ],
+    "extendedAttributes": [],
+    "maskOgnlValues": false
+  },
+  "attributeMapping": {
+    "attributeSources": [],
+    "attributeContractFulfillment": {
+      "username": {
+        "source": {
+          "type": "ADAPTER"
+        },
+        "value": "username"
+      }
+    },
+    "issuanceCriteria": {
+      "conditionalCriteria": []
+    }
+  }
+}
