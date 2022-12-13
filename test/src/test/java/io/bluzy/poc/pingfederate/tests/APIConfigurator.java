@@ -10,11 +10,11 @@ import org.apache.hc.core5.http.HttpHeaders;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.Map;
 
+import static java.nio.charset.Charset.defaultCharset;
+import static java.nio.file.Files.readString;
+import static java.nio.file.Paths.get;
 import static java.util.Objects.nonNull;
 import static java.util.regex.Matcher.quoteReplacement;
 
@@ -33,8 +33,8 @@ public class APIConfigurator {
 
     public String applyConfigChange(String url, String fileName, Map<String, String> params) throws IOException, URISyntaxException {
 
-        String[] json = new String[] { Files.readString(
-                Paths.get(getClass().getResource(fileName).toURI()), Charset.defaultCharset()
+        String[] json = new String[] { readString(
+                get(getClass().getResource(fileName).toURI()), defaultCharset()
         )};
 
         if(nonNull(params)) {
@@ -63,7 +63,8 @@ public class APIConfigurator {
         }
     }
 
-    public String putConfig(String url, String json) throws IOException {
+    public String putConfig(String url, String fileName) throws IOException, URISyntaxException {
+        String json = readString(get(getClass().getResource(fileName).toURI()), defaultCharset());
         RequestBody body = RequestBody.create(json, JSON);
         Request request = new Request.Builder()
                 .url(url)

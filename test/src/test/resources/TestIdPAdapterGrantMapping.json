@@ -17,9 +17,9 @@
   "issuanceCriteria": {
     "conditionalCriteria": []
   },
-  "id": "TestBasicIdPAdapter",
+  "id": "TestIdPAdapter",
   "idpAdapterRef": {
-    "id": "TestBasicIdPAdapter",
+    "id": "TestIdPAdapter",
     "location": "https://localhost:9999/pf-admin-api/v1/idp/adapters/TestIdPAdapter"
   }
 }

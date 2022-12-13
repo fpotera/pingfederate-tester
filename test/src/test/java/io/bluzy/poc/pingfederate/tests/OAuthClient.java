@@ -42,7 +42,7 @@ public class OAuthClient {
         }
     }
 
-    private URI buildImplicitFlow() throws URISyntaxException {
+    public URI buildImplicitFlow() throws URISyntaxException {
 
         URI authzEndpoint = new URI(authzEndpURL);
 

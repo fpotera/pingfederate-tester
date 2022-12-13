@@ -49,6 +49,14 @@ services:
     networks:
       - pingnet
 
+  selenium:
+    image: docker.io/selenium/standalone-firefox
+    shm_size: 2gb
+    ports:
+      - "4444:4444"
+    networks:
+      - pingnet
+
   java-test:
     image: java-test
     build:
@@ -67,6 +75,8 @@ services:
       pingfederate:
         condition: service_healthy
       mockserver:
+        condition: service_started
+      selenium:
         condition: service_started
 
 networks:
