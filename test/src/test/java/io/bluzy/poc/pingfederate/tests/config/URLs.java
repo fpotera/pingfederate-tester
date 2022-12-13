@@ -25,4 +25,6 @@ public interface URLs {
 
     String PING_FED_IDP_ADAPTER_GRANT_MAPPING_URL = format("https://{0}:9999/pf-admin-api/v1/oauth/idpAdapterMappings", PING_FEDERATE_HOST);
 
+    String PING_FED_SERVER_SETTINGS_URL = format("https://{0}:9999/pf-admin-api/v1/serverSettings", PING_FEDERATE_HOST);
+
 }

@@ -1,0 +1,44 @@
+{
+  "contactInfo": {},
+  "rolesAndProtocols": {
+    "oauthRole": {
+      "enableOauth": true,
+      "enableOpenIdConnect": true
+    },
+    "idpRole": {
+      "enable": true,
+      "enableSaml11": true,
+      "enableSaml10": true,
+      "enableWsFed": true,
+      "enableWsTrust": true,
+      "saml20Profile": {
+        "enable": true
+      },
+      "enableOutboundProvisioning": true
+    },
+    "spRole": {
+      "enable": true,
+      "enableSaml11": true,
+      "enableSaml10": true,
+      "enableWsFed": true,
+      "enableWsTrust": true,
+      "saml20Profile": {
+        "enable": true,
+        "enableXASP": true
+      },
+      "enableInboundProvisioning": true,
+      "enableOpenIDConnect": true
+    },
+    "enableIdpDiscovery": true
+  },
+  "federationInfo": {
+    "baseUrl": "https://pingfederate:9031",
+    "saml2EntityId": "evaluation",
+    "saml1xIssuerId": "",
+    "saml1xSourceId": "",
+    "wsfedRealm": ""
+  },
+  "notifications": {
+    "notifyAdminUserPasswordChanges": false
+  }
+}

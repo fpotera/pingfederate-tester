@@ -14,7 +14,7 @@
   "context": {
     "type": "IDP_ADAPTER",
     "contextRef": {
-      "id": "TestBasicIdPAdapter",
+      "id": "TestIdPAdapter",
       "location": "https://localhost:9999/pf-admin-api/v1/idp/adapters/TestIdPAdapter"
     }
   },
